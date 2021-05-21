@@ -213,6 +213,9 @@ message(STATUS "CPLEX support: ${USE_CPLEX}")
 option(USE_XPRESS "Use the XPRESS solver" OFF)
 message(STATUS "XPRESS support: ${USE_XPRESS}")
 
+option(USE_GLPK "Use the GLPK solver" OFF)
+message(STATUS "GLPK support: ${USE_GLPK}")
+
 # Build Needed dependencies
 add_subdirectory(cmake/dependencies dependencies)
 list(APPEND CMAKE_PREFIX_PATH ${CMAKE_CURRENT_BINARY_DIR}/dependencies/install)

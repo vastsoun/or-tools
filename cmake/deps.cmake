@@ -86,3 +86,7 @@ endif()
 if(USE_XPRESS)
   find_package(XPRESS REQUIRED)
 endif()
+
+if(USE_GLPK)
+  find_package(GLPK REQUIRED)
+endif()

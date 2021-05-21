@@ -15,6 +15,7 @@ set_target_properties(${NAME} PROPERTIES
   CXX_EXTENSIONS OFF
   POSITION_INDEPENDENT_CODE ON
   )
+target_compile_definitions(${NAME} PRIVATE "-DUSE_GLPK")
 target_include_directories(${NAME} PUBLIC
   $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
   $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}>)
@@ -28,5 +29,6 @@ target_link_libraries(${NAME} PRIVATE
   $<$<BOOL:${USE_CPLEX}>:CPLEX::CPLEX>
   $<$<BOOL:${USE_XPRESS}>:XPRESS::XPRESS>
   $<$<BOOL:${USE_SCIP}>:libscip>
+  $<$<BOOL:${USE_GLPK}>:GLPK::GLPK>
   ${PROJECT_NAME}::proto)
 #add_library(${PROJECT_NAME}::linear_solver ALIAS ${NAME})
